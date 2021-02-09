@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced CSS - Assignment 3</title>
+    <style>
+      
+
+#box1 {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: #050210;
+    position: relative;
+
+}
+#shadow {
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 100%;
+    background:linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    filter:saturate(1);
+    filter: blur(50px);
+    top: 170px;
+    left: 170px;
+    bottom: 170px;
+    right: 170px;
+    width: 250px;
+    height: 250px;
+    transform-origin: center;
+}
+#shadow{
+    animation-name: ring;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+}
+
+@keyframes ring{
+    from {
+        transform: rotate(0deg);
+    }
+        
+    to {
+        transform: rotate(359deg);
+       
+}
+}
+
+#circle1 {
+    position: absolute;
+    border: 1px solid rgb(133, 128, 128);
+    border-radius: 100%;
+    background:linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    top: 170px;
+    left: 170px;
+    bottom: 170px;
+    right: 170px;
+    width: 250px;
+    height: 250px;
+    transform-origin: center;
+    animation: ring;
+}
+#circle1 {
+    animation-name: ring;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+}
+
+
+#circle2 {
+    position:absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    border: 1px solid black;
+    top: 195px;
+    left: 193px;
+    bottom: 195px;
+    right: 198px;
+    margin: 0 auto;
+    background: #050210;
+    transform-origin:center;
+}
+
+ #circle2::after{
+    position: absolute;
+    content: " ";
+    border-radius: 100%;
+    border: 1px solid black;
+    top: 0;
+    left: 0;
+    bottom: 203px;
+    width: 200px;
+    height: 200px;
+    background:#342664;
+    animation-name: puls;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+ }
+
+@keyframes puls{
+    0% {
+        transform: scale(0);
+        background-color:#473f5c ;
+    }
+    25% {
+        transform: scale(0.25);
+        background-color: #312a47;
+    }
+    50% {
+        transform: scale(0.5);
+        background-color: #261e3b;
+    }
+    75% {
+        transform: scale(0.75);
+        background-color: #221741;
+    }
+    100%{
+        transform: scale(1);
+        background-color:#0e091b ;
+    }
+}
+</style>
+</head>
+<body>
+   
+   <div id="box1">
+
+    <div id="shadow"></div>
+    <div id="circle1"></div>
+    <div id="circle2" class="negro"></div>
+      
+       
+   </div>
+
+</body>
+</html>
